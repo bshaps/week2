@@ -1,0 +1,35 @@
+<!-- Change this page so that you get the weather for your current location. -->
+<!-- Display the current conditions on the page. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <a href="#" onclick="getWeather()">Get Weather</a>
+
+  <script type="text/javascript">
+    api_key = "a65d37c3f4845b5e43e50756c1ed1240"
+    weather_url = 'https://api.forecast.io/forecast/' + api_key + '/41.9022,-87.6726'
+
+    // weather_url = "http://api.openweathermap.org/data/2.5/weather?q=London,UK"
+
+    function getWeather() {
+      $.ajax({
+            url: weather_url,
+
+            // // Work with the response
+            success: function( response ) {
+              window.alert("Hi!")
+              console.log(response)
+            }
+          });
+    }
+  </script>
+  </body>
+</html>
+
+<!-- Can you change the code to get the weather for your current location? -->
